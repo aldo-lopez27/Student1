@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -69,6 +70,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="InstructorForm.aspx" />
+    <Content Include="LoginForm.aspx" />
     <Content Include="MemberForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -83,6 +85,20 @@
     <Compile Include="InstructorForm.aspx.designer.cs">
       <DependentUpon>InstructorForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LoginForm.aspx.cs">
+      <DependentUpon>LoginForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginForm.aspx.designer.cs">
+      <DependentUpon>LoginForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.Master.cs">
+      <DependentUpon>LoginForm.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Master.designer.cs">
+      <DependentUpon>LoginForm.Master</DependentUpon>
+    </Compile>
     <Compile Include="MemberForm.aspx.cs">
       <DependentUpon>MemberForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -90,10 +106,24 @@
     <Compile Include="MemberForm.aspx.designer.cs">
       <DependentUpon>MemberForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pages.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LoginForm.Master" />
     <None Include="packages.config" />
+    <Content Include="Pages.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Pages.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Pages.dbml.layout">
+      <DependentUpon>Pages.dbml</DependentUpon>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -104,6 +134,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
